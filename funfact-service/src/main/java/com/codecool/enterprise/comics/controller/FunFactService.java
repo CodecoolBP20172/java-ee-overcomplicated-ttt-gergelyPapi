@@ -1,4 +1,4 @@
-package com.codecool.enterprise.funfact.controller;
+package com.codecool.enterprise.comics.controller;
 
 import com.codecool.enterprise.funfact.model.FunFact;
 import org.springframework.stereotype.Service;

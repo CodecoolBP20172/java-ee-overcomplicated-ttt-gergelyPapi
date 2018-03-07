@@ -40,16 +40,23 @@ public class GameController {
     @RequestMapping(value = "/game",  method = RequestMethod.GET)
     public String gameView(@ModelAttribute("player") Player player, Model model) {
 
-        final String uri = "http://localhost:60001/api/get_random_quote";
+        final String uriForQuote = "http://localhost:60001/api/get_random_quote";
 
         RestTemplate restTemplate = new RestTemplate();
-        String result = restTemplate.getForObject(uri, String.class);
+        String quote = restTemplate.getForObject(uriForQuote, String.class);
 
-        System.out.println(result);
+        System.out.println(quote);
+
+        final String uriForImg = "http://localhost:60003/api/get_random_img";
+
+        RestTemplate restTemplateImg = new RestTemplate();
+        String img = restTemplateImg.getForObject(uriForImg, String.class);
+
+        System.out.println(img);
 
 
-        model.addAttribute("funfact", "&quot;" + result + "&quot;");
-        model.addAttribute("comic_uri", "https://imgs.xkcd.com/comics/bad_code.png");
+        model.addAttribute("funfact", "&quot;" + quote + "&quot;");
+        model.addAttribute("comic_uri", img);
         return "game";
     }
 
