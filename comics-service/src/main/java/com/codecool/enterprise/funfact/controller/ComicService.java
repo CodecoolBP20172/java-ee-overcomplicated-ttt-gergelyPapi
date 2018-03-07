@@ -1,7 +1,6 @@
-package com.codecool.enterprise.comics.controller;
+package com.codecool.enterprise.funfact.controller;
 
 import com.codecool.enterprise.comics.model.Comic;
-import com.codecool.enterprise.funfact.model.FunFact;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
