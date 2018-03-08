@@ -41,17 +41,17 @@ public class GameController {
     @RequestMapping(value = "/game",  method = RequestMethod.GET)
     public String gameView(@ModelAttribute("player") Player player, Model model, HttpSession session) {
 
-        final String uriForQuote = "http://localhost:60001/api/get_random_quote";
+        final String uriForQuote = "http://localhost:60003/api/get_random_quote";
         RestTemplate restTemplate = new RestTemplate();
         String quote = restTemplate.getForObject(uriForQuote, String.class);
         System.out.println(quote);
 
-        final String uriForImg = "http://localhost:60003/api/get_random_img";
+        final String uriForImg = "http://localhost:60002/api/get_random_img";
         RestTemplate restTemplateImg = new RestTemplate();
         String img = restTemplateImg.getForObject(uriForImg, String.class);
         System.out.println(img);
 
-        final String uriForAvatar = "http://localhost:60005/api/get_random_avatar";
+        final String uriForAvatar = "http://localhost:60001/api/get_random_avatar";
         RestTemplate restTemplateAvatar = new RestTemplate();
         String randomAvatarURI = restTemplateAvatar.getForObject(uriForAvatar, String.class);
         System.out.println(randomAvatarURI);
